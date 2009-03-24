@@ -1,0 +1,1 @@
+<?php function __autoload($cl){require"controllers/".$cl.".php";}$c=@$_GET['action']?$_GET['action']:'index';$c.="Controller";class controller{function before(){}function index(){}function after(){}}$con=new $c;$con->before();$con->index();$con->after();?>

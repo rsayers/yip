@@ -1,0 +1,19 @@
+Yip! A micro framework for PHP.
+-------------------------------
+
+When all you need is something to quickly dispatch pages and nothing more.
+
+USAGE:
+
+Create your index.php and include yip.php.  You can do any other bootstrapping after that such as setting up your database connection, including any other libraries or such.
+
+create new controllers in the "controllers" subdirectory,  $_GET['action'] will determine the name of the controller called.  so if someone goes to www.yoursite.com/index.php?action=foo,  then controllers/fooController.php will be loaded.  your class will also need to be named fooController in this case and subclass "controller".  Ex:
+
+class fooController extends controller {
+      function index(){ echo "Hello World!" }
+}
+
+the index method will contain your pages actual logic and output.  the methods "before" and "after" will be called... before and after the index method, this is handy for dealing with user authentication or anything else you may need.
+
+
+It is recommended to use mod_rewrite with this to make the url's look a little better.
